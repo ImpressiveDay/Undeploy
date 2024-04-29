@@ -8,6 +8,6 @@ $ProgressPreference = 'SilentlyContinue'
 write "Downloading the removal tool dependency."
 Invoke-WebRequest "https://github.com/ImpressiveDay/Undeploy/raw/main/CsUninstallTool.exe" -OutFile "CsUninstallTool.exe"
 write "Finished download dependency. Awaiting next logic steps."
-Start-Process CsUninstallTool.exe -ArgumentList "MAINTENANCE_TOKEN=$tokenMaint /quiet"
+.\CsUninstallTool.exe "MAINTENANCE_TOKEN=$tokenMaint" /quiet
 write "Received $tokenMaint loud and clear, attempting to start the uninstaller."
 write "The process can take some time, relax."
